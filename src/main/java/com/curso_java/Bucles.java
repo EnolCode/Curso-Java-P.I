@@ -2,7 +2,7 @@ package com.curso_java;
 // import javax.swing.*;
 // import java.util.*;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -22,22 +22,34 @@ public class Bucles {
     //     System.out.println("Contraseña correcta, acceso permitido");
     // }
 
-    public static void main(String[] args){
-        int num = (int)(Math.floor(Math.random()*(1-100+1)+100));
-        int numUsuario = 0;
-        int intentos = 0;
-        Scanner entrada = new Scanner(System.in);
-        while(numUsuario != num){
-            intentos++;
-            System.out.println("Introduce un numero");
-            numUsuario = entrada.nextInt();
-            if(numUsuario > num){
-                System.out.println("El numero introducido es mayor al numero que tiene que adivinar");
-            }else{
-                System.out.println("El numero introducido es menor al numero que tiene que adivinar");
-            }
-        }
-        System.out.println("Enhorabuena, has acertado el numero, necesitastes " + intentos + " intentos para acertar");
+//     public static void main(String[] args){
+//         int num = (int)(Math.floor(Math.random()*(1-100+1)+100));
+//         int numUsuario = 0;
+//         int intentos = 0;
+//         Scanner entrada = new Scanner(System.in);
+//         while(numUsuario != num){
+//             intentos++;
+//             System.out.println("Introduce un numero");
+//             numUsuario = entrada.nextInt();
+//             if(numUsuario > num){
+//                 System.out.println("El numero introducido es mayor al numero que tiene que adivinar");
+//             }else{
+//                 System.out.println("El numero introducido es menor al numero que tiene que adivinar");
+//             }
+//         }
+//         System.out.println("Enhorabuena, has acertado el numero, necesitastes " + intentos + " intentos para acertar");
+// }
+
+// }
+
+ public static void main(String[] args) {
+    int resultado = 1;
+    int numero = Integer.parseInt(JOptionPane.showInputDialog("Introduce un numero"));    
+ 
+    for( int i = numero; i > 0 ; i -- ){
+        resultado = resultado * i ;
+    }
+    System.out.println("El factorial de " + numero + " es " + resultado);
 }
 
 }
