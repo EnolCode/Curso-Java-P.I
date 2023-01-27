@@ -25,10 +25,10 @@ public class Coche {
     }
 
     public void configuraAsientos( String asientosCuero){
-        if(asientosCuero=="si"){
+        if(asientosCuero.equalsIgnoreCase("si")){
             this.asientosCuero = true;
         }
-        if(asientosCuero=="no"){
+        if(asientosCuero.equalsIgnoreCase("no")){
             this.asientosCuero = false;
         }
     }
@@ -43,5 +43,42 @@ public class Coche {
 
         return null;
     }
+
+    public void configuraClimatizador(String climatizador){
+
+        if(climatizador.equalsIgnoreCase("si")){
+            this.climatizador = true;
+        }
+        if(climatizador.equalsIgnoreCase("no")){
+            this.climatizador = false;
+        }
+    }
+
+    public String dimeClimatizador(){
+            if(climatizador == true){
+                return  "El coche incorpora climatizador";
+            }
+            if(climatizador == false){
+                return  "El coche lleva aire acondicionado";
+            }
+            return null;
+    }
+
+    public String precioCoche(){ // GETTER
+
+        int precioFinal = 10000;
+
+        if(asientosCuero == true){
+            precioFinal+=2000;
+        }
+        if(climatizador == true){
+            precioFinal+=1500;
+        }
+
+        return "El precio final del coche es " + precioFinal + "$.";
+    }
+
+
+
 
 }
